@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="description"
+			content="A floor plan–photo correspondence dataset for learning cross-view, cross-modality geometric matching."
+		/>
+		<meta
+			name="keywords"
+			content="C3Po, Computer Vision, Correspondence, Pointmap Prediction, Dataset"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>C3Po</title>
+
+		<!-- Google tag (gtag.js) -->
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EWGMC7JTK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1EWGMC7JTK');
+  </script> -->
+
+		<link
+			href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./static/css/bulma.min.css" />
+		<link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+		<link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+		<link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+		/>
+		<link rel="stylesheet" href="./static/css/index.css" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+                    <text y=%22.9em%22 font-size=%2290%22>🏛️</text>
+                    </svg>"
+		/>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script defer src="./static/js/fontawesome.all.min.js"></script>
+		<script src="./static/js/bulma-carousel.min.js"></script>
+		<script src="./static/js/bulma-slider.min.js"></script>
+		<script src="./static/js/index.js"></script>
+	</head>
+	<body>
+		<section class="hero">
+			<div class="hero-body">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered">
+						<div class="column has-text-centered">
+							<h1
+								class="publication-title is-size-1 publication-title"
+							>
+								C3Po: Cross-View Cross-Modality Correspondence
+								by Pointmap Prediction
+							</h1>
+
+							<div class="is-size-5 publication-venue">
+								NeurIPS 2025
+							</div>
+
+							<div class="is-size-5 publication-authors">
+								<span class="author-block">
+									<!-- <a href="https://jot-jt.github.io/"
+										>Joseph Tung</a
+									><sup>꘎1</sup> -->
+									Kuan Wei Huang,</span
+								>
+								<span class="author-block">
+									<!-- <a href="https://genechou.com/">Gene Chou</a
+									><sup>꘎1</sup> -->
+									Brandon Li,</span
+								>
+								<span class="author-block">
+									<a
+										href="https://www.cs.cornell.edu/~bharathh/"
+										>Bharath Hariharan</a
+									>,
+									<!-- <sup>1</sup> -->
+								</span>
+								<span class="author-block">
+									<a
+										href="https://www.cs.cornell.edu/~snavely/"
+										>Noah Snavely</a
+									>
+									<!-- <sup>1</sup> -->
+								</span>
+							</div>
+
+							<div class="is-size-5 publication-authors">
+								<span class="author-block">
+									<!-- <sup>1</sup> -->
+									Cornell University</span
+								>
+								<!-- <span class="author-block"
+									><sup>2</sup>Stanford University,</span
+								>
+								<span class="author-block"
+									><sup>3</sup>Adobe Research</span
+								> -->
+							</div>
+
+							<!-- <div class="is-size-6">
+								<span class="author-block"
+									><sup>꘎</sup>Equal Contribution</span
+								>
+							</div> -->
+
+							<div class="column has-text-centered">
+								<div class="publication-links">
+									<!-- PDF Link. -->
+									<span class="link-block">
+										<a
+											href="C3Po.pdf"
+											class="external-link button is-normal is-rounded is-dark"
+										>
+											<span class="icon">
+												<i class="fas fa-file-pdf"></i>
+											</span>
+											<span>Paper</span>
+										</a>
+									</span>
+									<span class="link-block">
+										<a
+											href="https://arxiv.org/abs/2406.11819"
+											class="external-link button is-normal is-rounded is-dark"
+										>
+											<span class="icon">
+												<i class="ai ai-arxiv"></i>
+											</span>
+											<span>arXiv</span>
+										</a>
+									</span>
+
+									<!-- Code Link. -->
+									<span class="link-block">
+										<a
+											href="https://github.com/kwhuang88228/C3Po"
+											class="external-link button is-normal is-rounded is-dark"
+										>
+											<span class="icon">
+												<i class="fab fa-github"></i>
+											</span>
+											<span>Code</span>
+										</a>
+									</span>
+									<!-- Dataset Link. -->
+									<span class="link-block">
+										<a
+											href="https://huggingface.co/datasets/kwhuang/C3"
+											class="external-link button is-normal is-rounded is-dark"
+										>
+											<span class="icon">
+												<i class="far fa-images"></i>
+											</span>
+											<span>Data</span>
+										</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="hero teaser">
+			<div class="container is-max-desktop">
+				<div class="hero-body">
+					<img
+						src="./static/images/teaser.png"
+						class="interpolation-image"
+						alt="Interpolate start reference image."
+					/>
+					<h2 class="subtitle has-text-centered">
+						We present <span class="dnerf">C3</span>, a dataset of
+						floor plan and photo pairs from the Internet, along with
+						point correspondences between them. It consists of 91K
+						paire Internet photos and plans, and 155M
+						correspondences, across 574 scenes, including diverse
+						scene structures, lighting conditions, and camera poses.
+						Above we show a example plan-photo pairs, with blue and
+						red points indicating point correspondence within each
+						pair.
+					</h2>
+				</div>
+
+				<!-- <div class="hero-body">
+					<video
+						id="nvs_teaser"
+						autoplay
+						controls
+						muted
+						loop
+						playsinline
+						height="100%"
+					>
+						<source
+							src="./static/videos/nvs_teaser.mp4"
+							type="video/mp4"
+						/>
+					</video>
+					<h2 class="subtitle has-text-centered">
+						On the task of single-image novel view synthesis (NVS),
+						we show that training on
+						<span class="dnerf">MegaScenes</span> leads to
+						generalization to in-the-wild scenes. All videos shown
+						here are generated using a single image as input, and
+						none of the categories were seen during training.
+					</h2>
+				</div> -->
+			</div>
+		</section>
+
+		<section class="section hero is-light">
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<h2 class="title is-3">Abstract</h2>
+						<div class="content has-text-justified">
+							<p>
+								Geometric models like DUSt3R have shown great
+								advances in understanding the geometry of a
+								scene from pairs of photos. However, they fail
+								when the inputs are from vastly different
+								viewpoints (e.g., aerial vs. ground) or
+								modalities (e.g., photos vs. abstract drawings)
+								due to the vast differences in viewpoint or
+								style compared to what was observed during
+								training. This paper addresses a challenging
+								version of this problem: predicting
+								correspondences between ground-level photos and
+								floor plans. Current datasets for joint
+								photo--floor plan reasoning are limited, either
+								lacking in varying modalities (VIGOR) or lacking
+								in correspondences (WAFFLE). To address these
+								limitations, we introduce a new dataset,
+								<span class="dnerf">C3</span>, created by first
+								reconstructing a number of scenes in 3D from
+								Internet photo collections via structure from
+								motion, then manually registering the
+								reconstructions to floor plans gathered from the
+								Internet, from which we can derive
+								correspondence between images and floor plans.
+								<span class="dnerf">C3</span> contains 91K
+								paired floor plans and photos across 574 scenes
+								with 155M pixel-level correspondences. We find
+								that state-of-the-art correspondence models
+								struggle on this task. By training on our new
+								data, we can improve on the best performing
+								method by 34% in RMSE. However, we also identify
+								open challenges in cross-modal geometric
+								reasoning that our dataset aims to help address.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered">
+					<div class="column is-four-fifths">
+						<div class="columns is-centered has-text-centered">
+							<h2 class="title is-3">Dataset Collection</h2>
+						</div>
+						<p>
+							We first source and identify potential scene
+							categories from WikiData. Subsequently, images and
+							metadata for each scene category is downloaded.
+							Finally, we reconstruct scenes using Structure from
+							Motion (SfM) and clean them using the Doppelgangers
+							pipeline.
+						</p>
+						<img
+							src="./static/images/dataset/dataset_pipeline.jpg"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered">
+					<div class="column is-four-fifths">
+						<div class="columns is-centered has-text-centered">
+							<h2 class="title is-3">Dataset Statistics</h2>
+						</div>
+						<p>
+							We show the distribution of the MegaScenes Dataset.
+							On the left, we depict the frequency of scenes
+							grouped by WikiData class. This includes only select
+							classes with more than 3,500 scenes; note that a
+							single scene may be an instance of multiple classes.
+							On the right, we visualize the geospatial
+							distribution of collected scenes worldwide.
+						</p>
+						<img
+							src="./static/images/dataset/scene_class_combined_log.png"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Dataset Layout</h2>
+      </div>
+          <p>
+            layout: depends on how joseph you decide to organize the directories and subdirectories? e.g. grouped by first two letters 
+
+          </p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+		<section
+			class="section"
+			style="margin-bottom: 10px; padding-bottom: 0px"
+		>
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered">
+					<div class="column is-four-fifths">
+						<div class="columns is-centered has-text-centered">
+							<h2 class="title is-3">
+								Application: Single Image Novel View Synthesis
+							</h2>
+						</div>
+						<p>
+							To explore the diversity and scale of the MegaScenes
+							Dataset, we experiment on the task of single image
+							novel view synthesis, where the goal is to take a
+							reference image and generate a plausible image at a
+							target pose. We train and evaluate on image pairs
+							with pseudo-ground-truth relative poses obtained via
+							SfM.
+						</p>
+						<!-- <img src="./static/images/dataset/scene_class_combined_log.png"/> -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered">
+					<div class="column">
+						<div class="content">
+							<h2 class="title is-4">
+								Conditioning on the Extrinsic Matrix
+							</h2>
+							<p>
+								Simply finetuning pose-conditioned diffusion
+								models, such as ZeroNVS, signficantly improves
+								their generalization to in-the-wild scenes.
+								However, the depth and scale of the scene in
+								ZeroNVS is ambiguous and requires manual tuning.
+							</p>
+							<img
+								src="./static/images/nvs/zeronvs_example.png"
+							/>
+							<figcaption>
+								These scenes are unseen during training. ZeroNVS
+								finetuned on MegaScenes, denoted ZeroNVS (MS),
+								demonstrates stronger generalizability. However,
+								when there are larger translation changes, such
+								as zooming, ZeroNVS (MS) still fails. See the
+								paper for more examples.
+							</figcaption>
+						</div>
+					</div>
+
+					<div class="column">
+						<h2 class="title is-4">
+							Conditioning on Warped Images
+						</h2>
+						<div class="columns is-centered">
+							<div class="column content">
+								<p>
+									We find that first warping the image into
+									the target pose is a strong condition that
+									encodes how pixels are supposed to move, and
+									is directly aligned with the scene scale. On
+									our training and evaluation datasets, the
+									scale is based on 3D SfM points. When given
+									a random, in-the-wild image, we can
+									determine the scene scale from estimated
+									monocular depth and use the same extrinsics
+									for conditioning and warping the image for a
+									consistent scale.
+								</p>
+								<img
+									src="./static/images/nvs/newwarpfigure.png"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered">
+					<div class="column is-four-fifths">
+						<div class="columns is-centered has-text-centered">
+							<h2 class="title is-4">Evaluation</h2>
+						</div>
+						<p>
+							We evaluate on MegaScenes’ test set, which consists
+							of in-the-wild scenes from Internet photos. Here, we
+							show comparisons between four models. 1.
+							SD-inpainting: A Stable Diffusion inpainting model
+							without any finetuning. 2. ZeroNVS (released): The
+							ZeroNVS released checkpoint. 3. ZeroNVS (MS):
+							ZeroNVS finetuned on MegaScenes. 4. Ours: Finetuned
+							from ZeroNVS on MegaScenes, and conditioned on both
+							the extrinsic matrices and the warped images. See
+							the paper for more evaluations and baselines.
+						</p>
+
+						<img
+							src="./static/images/nvs/qual_results.png"
+							style="margin-top: 20px"
+						/>
+						<img
+							src="./static/images/nvs/quant_results.png"
+							style="margin-top: 20px"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered">
+					<div class="column is-four-fifths">
+						<div class="columns is-centered has-text-centered">
+							<h2 class="title is-3">Discussion</h2>
+						</div>
+						<p>
+							MegaScenes is a general large-scale 3D dataset, and
+							we foresee a variety of 3D-related applications that
+							could benefit from MegaScenes, such as pose
+							estimation, feature matching, and reconstruction. In
+							this paper we focus on NVS as a representative
+							application and we find that MegaScenes is indeed
+							capable of training generalizable 3D models.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="BibTeX">
+			<div class="container is-max-desktop content">
+				<h2 class="title">BibTeX</h2>
+				<pre><code>
+    @inproceedings{
+      huang2025c3po,
+      title={C3Po: Cross-View Cross-Modality Correspondence by Pointmap Prediction}, 
+      author={Wei Huang, Kuan and Li, Brandon and Hariharan, Bharath and Snavely, Noah},
+      booktitle={NeurIPS},
+      year={2025}
+    }
+    </code></pre>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="content has-text-centered">
+					<a class="icon-link" href="./C3Po.pdf">
+						<i class="fas fa-file-pdf"></i>
+					</a>
+					<a
+						class="icon-link"
+						href="https://github.com/kwhuang88228/C3Po"
+						class="external-link"
+						disabled
+					>
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+				<div class="columns is-centered">
+					<div class="column is-8">
+						<div class="content">
+							<p>
+								This website is borrowed from
+								<a href="https://nerfies.github.io/">Nerfies</a
+								>.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
