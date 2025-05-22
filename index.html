@@ -310,7 +310,7 @@
 			</div>
 		</section>
 
-		<section class="section">
+		<!-- <section class="section">
 			<div class="container is-max-desktop">
 				<div class="columns is-centered">
 					<div class="column">
@@ -366,7 +366,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<section class="section">
 			<div class="container is-max-desktop">
@@ -376,7 +376,7 @@
 						<div class="columns is-centered has-text-centered">
 							<h2 class="title is-4">Evaluation</h2>
 						</div>
-						<p>
+						<!-- <p>
 							We evaluate on MegaScenes’ test set, which consists
 							of in-the-wild scenes from Internet photos. Here, we
 							show comparisons between four models. 1.
@@ -387,7 +387,7 @@
 							from ZeroNVS on MegaScenes, and conditioned on both
 							the extrinsic matrices and the warped images. See
 							the paper for more evaluations and baselines.
-						</p>
+						</p> -->
 
 						<img
 							src="./static/images/correspondence/qualitative.png"
@@ -411,17 +411,18 @@
 				<div class="columns is-centered">
 					<div class="column is-four-fifths">
 						<div class="columns is-centered has-text-centered">
-							<h2 class="title is-3">Discussion</h2>
+							<h2 class="title is-3">Open Challenges</h2>
 						</div>
 						<p>
-							MegaScenes is a general large-scale 3D dataset, and
-							we foresee a variety of 3D-related applications that
-							could benefit from MegaScenes, such as pose
-							estimation, feature matching, and reconstruction. In
-							this paper we focus on NVS as a representative
-							application and we find that MegaScenes is indeed
-							capable of training generalizable 3D models.
-						</p>
+							We share two categories of data that our model struggles on. Challenge 1, top two rows, are
+                            cases where the photo provides minimal context clues of where it could be on the floor plan. Challenge
+                            2, bottom two rows, are scenes that exhibit structural symmetry, where multiple correspondence
+                            alignments would seem plausible.
+						</p> 
+                        <img 
+                            src="./static/images/correspondence/open_challenges.png"
+							style="margin-top: 20px"
+                        />
 					</div>
 				</div>
 			</div>
