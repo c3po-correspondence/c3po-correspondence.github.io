@@ -116,7 +116,7 @@
 							<div class="column has-text-centered">
 								<div class="publication-links">
 									<!-- PDF Link. -->
-									<span class="link-block">
+									<!-- <span class="link-block">
 										<a
 											href="C3Po.pdf"
 											class="external-link button is-normal is-rounded is-dark"
@@ -137,7 +137,7 @@
 											</span>
 											<span>arXiv</span>
 										</a>
-									</span>
+									</span> -->
 
 									<!-- Code Link. -->
 									<span class="link-block">
@@ -180,15 +180,14 @@
 						alt="Interpolate start reference image."
 					/>
 					<h2 class="subtitle has-text-centered">
-						We present <span class="dnerf">C3</span>, a dataset of
-						floor plan and photo pairs from the Internet, along with
-						point correspondences between them. It consists of 91K
-						paire Internet photos and plans, and 155M
-						correspondences, across 574 scenes, including diverse
-						scene structures, lighting conditions, and camera poses.
-						Above we show a example plan-photo pairs, with blue and
-						red points indicating point correspondence within each
-						pair.
+                        We present <b>C3</b> (for Cross-View Cross-Modality Correspondence), a dataset of 
+                        floor plan and photo pairs from the Internet, along with 
+                        point correspondences between them. It consists of 91K 
+                        paired Internet photos and plans and 155M correspondences, 
+                        across 574 scenes, including diverse scene structures, 
+                        lighting conditions and camera poses. Above we show 
+                        examples of plan-photo pairs, with blue and red points 
+                        indicating point correspondence within each pair.
 					</h2>
 				</div>
 
@@ -227,38 +226,7 @@
 						<h2 class="title is-3">Abstract</h2>
 						<div class="content has-text-justified">
 							<p>
-								Geometric models like DUSt3R have shown great
-								advances in understanding the geometry of a
-								scene from pairs of photos. However, they fail
-								when the inputs are from vastly different
-								viewpoints (e.g., aerial vs. ground) or
-								modalities (e.g., photos vs. abstract drawings)
-								due to the vast differences in viewpoint or
-								style compared to what was observed during
-								training. This paper addresses a challenging
-								version of this problem: predicting
-								correspondences between ground-level photos and
-								floor plans. Current datasets for joint
-								photo--floor plan reasoning are limited, either
-								lacking in varying modalities (VIGOR) or lacking
-								in correspondences (WAFFLE). To address these
-								limitations, we introduce a new dataset,
-								<span class="dnerf">C3</span>, created by first
-								reconstructing a number of scenes in 3D from
-								Internet photo collections via structure from
-								motion, then manually registering the
-								reconstructions to floor plans gathered from the
-								Internet, from which we can derive
-								correspondence between images and floor plans.
-								<span class="dnerf">C3</span> contains 91K
-								paired floor plans and photos across 574 scenes
-								with 155M pixel-level correspondences. We find
-								that state-of-the-art correspondence models
-								struggle on this task. By training on our new
-								data, we can improve on the best performing
-								method by 34% in RMSE. However, we also identify
-								open challenges in cross-modal geometric
-								reasoning that our dataset aims to help address.
+								Geometric models like DUSt3R have shown great advances in understanding the geometry of a scene from pairs of photos. However, they fail when the inputs are from vastly different viewpoints (e.g., aerial vs. ground) or modalities (e.g., photos vs. abstract drawings) due to the vast differences in viewpoint or style compared to what was observed during training. This paper addresses a challenging version of this problem: predicting correspondences between ground-level photos and floor plans. Current datasets for joint photo--floor plan reasoning are limited, either lacking in varying modalities (VIGOR) or lacking in correspondences (WAFFLE). To address these limitations, we introduce a new dataset, <b>C3</b>, created by first reconstructing a number of scenes in 3D from Internet photo collections via structure from motion, then manually registering the reconstructions to floor plans gathered from the Internet, from which we can derive correspondence between images and floor plans. <b>C3</b> contains 91K paired floor plans and photos across 574 scenes with 155M pixel-level correspondences. We find that state-of-the-art correspondence models struggle on this task. By training on our new data, we can improve on the best performing method by 34% in RMSE. However, we also identify open challenges in cross-modal geometric reasoning that our dataset aims to help address.
 							</p>
 						</div>
 					</div>
@@ -272,19 +240,11 @@
 				<div class="columns is-centered">
 					<div class="column is-four-fifths">
 						<div class="columns is-centered has-text-centered">
-							<h2 class="title is-3">Dataset Collection</h2>
+							<h2 class="title is-3">Dataset</h2>
 						</div>
 						<p>
-							We first source and identify potential scene
-							categories from WikiData. Subsequently, images and
-							metadata for each scene category is downloaded.
-							Finally, we reconstruct scenes using Structure from
-							Motion (SfM) and clean them using the Doppelgangers
-							pipeline.
+							Our goal is to create a dataset that consists of paired floor plans and photos and annotated correspondences between them. Two key challenges faced in building such a dataset are (1) finding a good source of floor plan images, and (2) determining correspondences between floor plans and corresponding images. We first 
 						</p>
-						<img
-							src="./static/images/dataset/dataset_pipeline.jpg"
-						/>
 					</div>
 				</div>
 			</div>
@@ -299,17 +259,8 @@
 							<h2 class="title is-3">Dataset Statistics</h2>
 						</div>
 						<p>
-							We show the distribution of the MegaScenes Dataset.
-							On the left, we depict the frequency of scenes
-							grouped by WikiData class. This includes only select
-							classes with more than 3,500 scenes; note that a
-							single scene may be an instance of multiple classes.
-							On the right, we visualize the geospatial
-							distribution of collected scenes worldwide.
+							The <b>C3</b> dataset contains 91K paired floor plan and photo images derived from 574 scenes. These scenes span 623 unique floor plans and 86K photos. The dataset also includes 156M pixel-level correspondences. For each pair, the number of correspondences varies, ranging from 1 to 13,262, with an average of 1,708 correspondences per pair. 
 						</p>
-						<img
-							src="./static/images/dataset/scene_class_combined_log.png"
-						/>
 					</div>
 				</div>
 			</div>
@@ -439,13 +390,16 @@
 						</p>
 
 						<img
-							src="./static/images/nvs/qual_results.png"
+							src="./static/images/correspondence/qualitative.png"
 							style="margin-top: 20px"
 						/>
 						<img
-							src="./static/images/nvs/quant_results.png"
+							src="./static/images/correspondence/quantitative.png"
 							style="margin-top: 20px"
 						/>
+                        <!-- <embed src="./static/images/nvs/qualitative.pdf" type="application/pdf" width="600" height="500">
+                        <embed src="./static/images/nvs/quantitative.pdf" type="application/pdf" width="600" height="500"> -->
+
 					</div>
 				</div>
 			</div>
@@ -473,7 +427,7 @@
 			</div>
 		</section>
 
-		<section class="section" id="BibTeX">
+		<!-- <section class="section" id="BibTeX">
 			<div class="container is-max-desktop content">
 				<h2 class="title">BibTeX</h2>
 				<pre><code>
@@ -485,7 +439,7 @@
     }
     </code></pre>
 			</div>
-		</section>
+		</section> -->
 
 		<footer class="footer">
 			<div class="container">
