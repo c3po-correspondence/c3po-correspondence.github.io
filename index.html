@@ -419,7 +419,7 @@
 							<h2 class="title is-4">Evaluation</h2>
 						</div>
                         <p>
-                            We evaluate our dataset with a combination of sparse, semi-dense and dense matching algorithms: SuperGlue, DINOv2, LoFTR, DIFT and MASt3R. We also evaluate on DUSt3R. While the correspondence baseline results were rather poor, we observe promising geometric structures in DUSt3R outputs; the model only needed to learn the 2D translation, rotation and scale to align to the floor plan. We therefore leverage the strong geometric prior from the pretrained DUSt3R model and finetune on our dataset, with some modifications detailed in the paper.
+                            We evaluate our dataset with a combination of sparse, semi-dense and dense matching algorithms: SuperGlue, DINOv2, LoFTR, DIFT and MASt3R. We also evaluate on DUSt3R. While the correspondence baseline results were rather poor, we observe promising geometric structures in DUSt3R outputs; the model only needed to learn the 2D translations, rotation and scale to align to the floor plan. We therefore leverage the strong geometric prior from the pretrained DUSt3R model and finetune on our dataset, with some modifications detailed in the paper.
                         </p>
 						<!-- <p>
 							We evaluate on MegaScenes’ test set, which consists
@@ -488,7 +488,7 @@
 							<h2 class="title is-3">Additional Qualitative Results</h2>
 						</div>
 						<p>
-							We share additional qualitative results, selected randomly from the test set. For reference, the DUSt3R representation produces a pointmap and confidence score as output for each pixel. We find that correct correspondence predictions by C3Po is generally accompanied by high confidence scores, while incorrect predictions have low confidence scores. The photos from lower confidence results usually exhibit ambiguity, including the ones identified in Open Challenges, while it is more obvious to identify the camera pose of photos from the higher confidence results. This is further corroborated by the PR curves, which show that C3Po significantly outperforms state-of-the-art models because more confident correspondence predictions are more likely to be correct.
+							We share additional qualitative results, selected randomly from the test set. For reference, the DUSt3R representation produces a pointmap and confidence score as output for each pixel. We find that correct correspondence predictions by C3Po is generally accompanied by high confidence scores, while incorrect predictions have low confidence scores. The photos from lower confidence results usually exhibit ambiguity, like the cases identified in Open Challenges, while it is more obvious to identify the camera pose of photos from the higher confidence results. This is further corroborated by the PR curves, which show that C3Po significantly outperforms state-of-the-art models because more confident correspondence predictions are more likely to be correct.
 						</p>
 						<img
 							src="./static/images/correspondence/additional_qualitative_1.png"
