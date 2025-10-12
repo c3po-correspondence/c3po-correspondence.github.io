@@ -55,15 +55,13 @@
 				<div class="container is-max-desktop">
 					<div class="columns is-centered">
 						<div class="column has-text-centered">
-							<h1
-								class="publication-title is-size-1 publication-title"
-							>
+							<h1 class="publication-title is-size-2 publication-title">
 								C3Po: Cross-View Cross-Modality Correspondence
 								by Pointmap Prediction
 							</h1>
                             <br>
 							<div class="is-size-4 publication-venue">
-								NeurIPS Datasets and Benchmarks, 2025
+								NeurIPS 2025 [Datasets and Benchmarks Track]
 							</div>
                             <br><br>
 							<div class="is-size-5 publication-authors">
@@ -130,10 +128,10 @@
 											</span>
 											<span>Paper</span>
 										</a>
-									</span>
+									</span> -->
 									<span class="link-block">
 										<a
-											href="https://arxiv.org/abs/2406.11819"
+											href="https://c3po-correspondence.github.io/"
 											class="external-link button is-normal is-rounded is-dark"
 										>
 											<span class="icon">
@@ -141,7 +139,7 @@
 											</span>
 											<span>arXiv</span>
 										</a>
-									</span> -->
+									</span>
 
 									<!-- Code Link. -->
 									<span class="link-block">
@@ -184,42 +182,9 @@
 						alt="Interpolate start reference image."
 					/>
 					<h2 class="subtitle has-text-centered">
-						We present <b>C3</b> (for Cross-View Cross-Modality
-						Correspondence), a dataset of floor plan and photo pairs
-						from the Internet, along with point correspondences
-						between them. It consists of 91K paired Internet photos
-						and plans and 155M correspondences, across 574 scenes,
-						including diverse scene structures, lighting conditions
-						and camera poses. Above we show examples of plan-photo
-						pairs, with blue and red points indicating point
-						correspondence within each pair.
+                        We present a dataset of paired floor plans and photos, annotated with point correspondences and camera poses. It consists of <b>91K plan-photo pairs</b>, <b>155M correspondences</b>, and <b>86K camera poses</b> across <b>574 scenes</b>, covering a broad range of scene structures, lighting conditions, and camera poses. We show photos captured from various poses within the Hagia Sophia, their camera poses, and color-coded correspondences to the floor plan.
 					</h2>
 				</div>
-
-				<!-- <div class="hero-body">
-					<video
-						id="nvs_teaser"
-						autoplay
-						controls
-						muted
-						loop
-						playsinline
-						height="100%"
-					>
-						<source
-							src="./static/videos/nvs_teaser.mp4"
-							type="video/mp4"
-						/>
-					</video>
-					<h2 class="subtitle has-text-centered">
-						On the task of single-image novel view synthesis (NVS),
-						we show that training on
-						<span class="dnerf">MegaScenes</span> leads to
-						generalization to in-the-wild scenes. All videos shown
-						here are generated using a single image as input, and
-						none of the categories were seen during training.
-					</h2>
-				</div> -->
 			</div>
 		</section>
 
@@ -231,37 +196,7 @@
 						<h2 class="title is-3">Abstract</h2>
 						<div class="content has-text-justified">
 							<p>
-								Geometric models like DUSt3R have shown great
-								advances in understanding the geometry of a
-								scene from pairs of photos. However, they fail
-								when the inputs are from vastly different
-								viewpoints (e.g., aerial vs. ground) or
-								modalities (e.g., photos vs. abstract drawings)
-								due to the vast differences in viewpoint or
-								style compared to what was observed during
-								training. This paper addresses a challenging
-								version of this problem: predicting
-								correspondences between ground-level photos and
-								floor plans. Current datasets for joint
-								photo-floor plan reasoning are limited, either
-								lacking in varying modalities (VIGOR) or lacking
-								in correspondences (WAFFLE). To address these
-								limitations, we introduce a new dataset,
-								<b>C3</b>, created by first reconstructing a
-								number of scenes in 3D from Internet photo
-								collections via structure-from-motion, then
-								manually registering the reconstructions to
-								floor plans gathered from the Internet, from
-								which we can derive correspondence between
-								images and floor plans. <b>C3</b> contains 91K
-								paired floor plans and photos across 574 scenes
-								with 155M pixel-level correspondences. We find
-								that state-of-the-art correspondence models
-								struggle on this task. By training on our new
-								data, we can improve on the best performing
-								method by 34% in RMSE. However, we also identify
-								open challenges in cross-modal geometric
-								reasoning that our dataset aims to help address.
+								Geometric models like DUSt3R have shown great advances in understanding the geometry of a scene from pairs of photos. However, they fail when the inputs are from vastly different viewpoints (e.g., aerial vs. ground) or modalities (e.g., photos vs. abstract drawings) compared to what was observed during training. This paper addresses a challenging version of this problem: predicting correspondences between ground-level photos and floor plans. Current datasets for joint photo-floor plan reasoning are limited, either lacking in varying modalities (VIGOR) or lacking in correspondences (WAFFLE). To address these limitations, we introduce a new dataset, <b>C3</b>, created by first reconstructing a number of scenes in 3D from Internet photo collections via structure-from-motion, then manually registering the reconstructions to floor plans gathered from the Internet, from which we can derive correspondence between images and floor plans. <b>C3</b> contains 91K paired floor plans and photos across 574 scenes with 155M pixel-level correspondences and 86K camera poses. We find that state-of-the-art correspondence models struggle on this task. By training on our new data, we can improve on the best performing method by 34% in RMSE. However, we also identify open challenges in cross-modal geometric reasoning that our dataset aims to help address.
 							</p>
 						</div>
 					</div>
@@ -275,7 +210,7 @@
 				<div class="columns is-centered">
 					<div class="column is-four-fifths">
 						<div class="columns is-centered has-text-centered">
-							<h2 class="title is-3">Dataset</h2>
+							<h2 class="title is-3">Dataset Creation</h2>
 						</div>
 						<p>
 							Our goal is to create a dataset that consists of
@@ -298,160 +233,64 @@
 			</div>
 		</section>
 
-		<section class="section">
+        <section class="section" style="margin-bottom: 10px; padding-bottom: 0px">
 			<div class="container is-max-desktop">
-				<!-- Abstract. -->
-				<div class="columns is-centered">
-					<div class="column is-four-fifths">
-						<div class="columns is-centered has-text-centered">
-							<h2 class="title is-3">Dataset Statistics</h2>
-						</div>
-						<p>
-							The <b>C3</b> dataset contains 91K paired floor plan
-							and photo images derived from 574 scenes. These
-							scenes span 623 unique floor plans and 86K photos.
-							The dataset also includes 156M pixel-level
-							correspondences. 
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Dataset Layout</h2>
-      </div>
-          <p>
-            layout: depends on how joseph you decide to organize the directories and subdirectories? e.g. grouped by first two letters 
-
-          </p>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-		<section
-			class="section"
-			style="margin-bottom: 10px; padding-bottom: 0px"
-		>
-			<div class="container is-max-desktop">
-				<!-- Abstract. -->
 				<div class="columns is-centered">
 					<div class="column is-four-fifths">
 						<div class="columns is-centered has-text-centered">
 							<h2 class="title is-3">
-								Correspondence by Pointmap Prediction
+								Evaluation
 							</h2>
 						</div>
 						<p>
-							We leverage the DUSt3R framework and input floor plan as the reference image (that is, the image that defines the 3D coordinate frame) along with a photo. This way, DUSt3R's pointmap representation maps each photo pixel to a 3D point at location (<em>x, y, z</em>) in the floor plan's coordinate frame. To obtain an actual pixel correspondence on the floor plan, we perform an orthographic projection (<em>x, y, z</em>) &#8594; (<em>x, z</em>), i.e., we drop the y-coordinate because the y-axis represents the up direction with respect to the coordinate frame of the first image (the floor plan in this case).
+                            We evaluate our dataset with a combination of sparse, semi-dense and dense matching algorithms: SuperGlue, LoFTR, DINOv2, DIFT, RoMa, and MASt3R. We also evaluate on DUSt3R. While the correspondence baseline results were rather poor, <b>we observe promising geometric structures in DUSt3R outputs; the model only needed to learn the 2D translations, rotation and scale to align to the floor plan</b>. We therefore leverage the strong geometric prior from the pretrained DUSt3R model and finetune on our dataset.
 						</p>
-						<!-- <img src="./static/images/dataset/scene_class_combined_log.png"/> -->
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- <section class="section">
-			<div class="container is-max-desktop">
-				<div class="columns is-centered">
-					<div class="column">
-						<div class="content">
-							<h2 class="title is-4">
-								Conditioning on the Extrinsic Matrix
-							</h2>
-							<p>
-								Simply finetuning pose-conditioned diffusion
-								models, such as ZeroNVS, signficantly improves
-								their generalization to in-the-wild scenes.
-								However, the depth and scale of the scene in
-								ZeroNVS is ambiguous and requires manual tuning.
-							</p>
-							<img
-								src="./static/images/nvs/zeronvs_example.png"
-							/>
-							<figcaption>
-								These scenes are unseen during training. ZeroNVS
-								finetuned on MegaScenes, denoted ZeroNVS (MS),
-								demonstrates stronger generalizability. However,
-								when there are larger translation changes, such
-								as zooming, ZeroNVS (MS) still fails. See the
-								paper for more examples.
-							</figcaption>
-						</div>
-					</div>
-
-					<div class="column">
-						<h2 class="title is-4">
-							Conditioning on Warped Images
-						</h2>
-						<div class="columns is-centered">
-							<div class="column content">
-								<p>
-									We find that first warping the image into
-									the target pose is a strong condition that
-									encodes how pixels are supposed to move, and
-									is directly aligned with the scene scale. On
-									our training and evaluation datasets, the
-									scale is based on 3D SfM points. When given
-									a random, in-the-wild image, we can
-									determine the scene scale from estimated
-									monocular depth and use the same extrinsics
-									for conditioning and warping the image for a
-									consistent scale.
-								</p>
-								<img
-									src="./static/images/nvs/newwarpfigure.png"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-
-		<section class="section">
+        <section class="section">
 			<div class="container is-max-desktop">
 				<!-- Abstract. -->
 				<div class="columns is-centered">
 					<div class="column is-four-fifths">
 						<div class="columns is-centered has-text-centered">
-							<h2 class="title is-4">Evaluation</h2>
+							<h2 class="title is-4">Correspondence by Pointmap Prediction</h2>
 						</div>
                         <p>
-                            We evaluate our dataset with a combination of sparse, semi-dense and dense matching algorithms: SuperGlue, DINOv2, LoFTR, DIFT and MASt3R. We also evaluate on DUSt3R. While the correspondence baseline results were rather poor, we observe promising geometric structures in DUSt3R outputs; the model only needed to learn the 2D translations, rotation and scale to align to the floor plan. We therefore leverage the strong geometric prior from the pretrained DUSt3R model and finetune on our dataset, with some modifications detailed in the paper.
+                            We use the DUSt3R framework with the floor plan as the reference image, which defines the 3D coordinate frame, along with a photo. DUSt3R then generates a pointmap that associates each pixel in the photo with a 3D point (<em>x</em>, <em>y</em>, <em>z</em>) in the coordinate system of the floor plan. To project onto the floor plan, we apply an orthographic projection by dropping the y-coordinate -- i.e. (<em>x</em>, <em>y</em>, <em>z</em>) &#8594; (<em>x</em>, <em>z</em>) -- since the y-axis represents the vertical (up) direction in the floor plan's coordinate frame.
                         </p>
-						<!-- <p>
-							We evaluate on MegaScenes’ test set, which consists
-							of in-the-wild scenes from Internet photos. Here, we
-							show comparisons between four models. 1.
-							SD-inpainting: A Stable Diffusion inpainting model
-							without any finetuning. 2. ZeroNVS (released): The
-							ZeroNVS released checkpoint. 3. ZeroNVS (MS):
-							ZeroNVS finetuned on MegaScenes. 4. Ours: Finetuned
-							from ZeroNVS on MegaScenes, and conditioned on both
-							the extrinsic matrices and the warped images. See
-							the paper for more evaluations and baselines.
-						</p> -->
-
-						<img
-							src="./static/images/correspondence/qualitative_1.png"
-							style="margin-top: 20px"
-						/>
-						<img
-							src="./static/images/correspondence/qualitative_2.png"
+                        <img
+							src="./static/images/qualitative.png"
 							style="margin-top: 20px"
 						/>
                         <img
-							src="./static/images/correspondence/quantitative.png"
+							src="./static/images/quantitative.png"
 							style="margin-top: 20px"
 						/>
 						<!-- <embed src="./static/images/nvs/qualitative.pdf" type="application/pdf" width="600" height="500">
                         <embed src="./static/images/nvs/quantitative.pdf" type="application/pdf" width="600" height="500"> -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <section class="section">
+			<div class="container is-max-desktop">
+				<!-- Abstract. -->
+				<div class="columns is-centered">
+					<div class="column is-four-fifths">
+						<div class="columns is-centered has-text-centered">
+							<h2 class="title is-4">Correlation between Confidence Scores and Correspondence Quality</h2>
+						</div>
+						<p>
+							We find that correct correspondence predictions by C3Po is generally accompanied by high confidence scores, while incorrect predictions have low confidence scores. The photos from lower confidence results usually exhibit ambiguity, like the cases identified in Open Challenges, while it is more obvious to identify the camera pose of photos from the higher confidence results. This is further corroborated by the PR curves, which show that C3Po significantly outperforms state-of-the-art models because more confident correspondence predictions are more likely to be correct.
+						</p>
+						<!-- <img
+							src="./static/images/additional_qualitative_1.png"
+                            style="margin-top: 20px"
+						/> -->
 					</div>
 				</div>
 			</div>
@@ -466,16 +305,13 @@
 							<h2 class="title is-3">Open Challenges</h2>
 						</div>
 						<p>
-							We share two categories of data that our model
-							struggles on. Challenge 1, top two rows, are cases
-							where the photo provides minimal context clues of
-							where it could be on the floor plan. Challenge 2,
-							bottom two rows, are scenes that exhibit structural
-							symmetry, where multiple correspondence alignments
-							would seem plausible.
+							We share two categories of data that our model struggles on. Challenge 1, top two rows, are cases
+							where the photo provides minimal context clues of where it could be on the floor plan. Challenge 2,
+							bottom two rows, are scenes that exhibit structural symmetry, where multiple correspondence alignments
+							would seem plausible. In all cases, our model makes plausible predictions but the answers are wrong due to lack of context or structural ambiguity.
 						</p>
 						<img
-							src="./static/images/correspondence/open_challenges.png"
+							src="./static/images/open_challenges.png"
 							style="margin-top: 20px"
 						/>
 					</div>
@@ -483,47 +319,21 @@
 			</div>
 		</section>
 
-        <section class="section">
-			<div class="container is-max-desktop">
-				<!-- Abstract. -->
-				<div class="columns is-centered">
-					<div class="column is-four-fifths">
-						<div class="columns is-centered has-text-centered">
-							<h2 class="title is-3">Additional Qualitative Results</h2>
-						</div>
-						<p>
-							We share additional qualitative results, selected randomly from the test set. For reference, the DUSt3R representation produces a pointmap and confidence score as output for each pixel. We find that correct correspondence predictions by C3Po is generally accompanied by high confidence scores, while incorrect predictions have low confidence scores. The photos from lower confidence results usually exhibit ambiguity, like the cases identified in Open Challenges, while it is more obvious to identify the camera pose of photos from the higher confidence results. This is further corroborated by the PR curves, which show that C3Po significantly outperforms state-of-the-art models because more confident correspondence predictions are more likely to be correct.
-						</p>
-						<img
-							src="./static/images/correspondence/additional_qualitative_1.png"
-						/>
-                        <img
-							src="./static/images/correspondence/additional_qualitative_2.png"
-						/>
-                        <img
-							src="./static/images/correspondence/additional_qualitative_3.png"
-						/>
-                        <img
-							src="./static/images/correspondence/additional_qualitative_4.png"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- <section class="section" id="BibTeX">
+		<section class="section" id="BibTeX">
 			<div class="container is-max-desktop content">
 				<h2 class="title">BibTeX</h2>
 				<pre><code>
-    @misc{
+    @inproceedings{
       huang2025c3po,
       title={C3Po: Cross-View Cross-Modality Correspondence by Pointmap Prediction}, 
       author={Huang, Kuan Wei and Li, Brandon and Hariharan, Bharath and Snavely, Noah},
+      booktitle={Advances in Neural Information Processing Systems},
+      volume={37},
       year={2025}
     }
     </code></pre>
 			</div>
-		</section> -->
+		</section>
 
 		<footer class="footer">
 			<div class="container">
