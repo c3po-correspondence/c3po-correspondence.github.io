@@ -199,13 +199,15 @@
                                 challenging version of this problem: predicting correspondences between ground-level
                                 photos and floor plans. Current datasets for joint photo-floor plan reasoning are
                                 limited, either lacking in varying modalities (VIGOR) or lacking in correspondences
-                                (WAFFLE). To address these limitations, we introduce a new dataset, C3, created by first reconstructing a number of scenes in 3D from Internet photo
-                                collections via structure-from-motion, then manually registering the reconstructions to
-                                floor plans gathered from the Internet, from which we can derive correspondence between
-                                images and floor plans. C3 contains 91K paired floor plans and photos across 574 scenes with 155M pixel-level correspondences and 86K camera poses. We find that state-of-the-art correspondence
-                                models struggle on this task. By training on our new data, we can improve on the best
-                                performing method by 34% in RMSE. However, we also identify open challenges in
-                                cross-modal geometric reasoning that our dataset aims to help address.
+                                (WAFFLE). To address these limitations, we introduce a new dataset, C3, created by first
+                                reconstructing a number of scenes in 3D from Internet photo collections via
+                                structure-from-motion, then manually registering the reconstructions to floor plans
+                                gathered from the Internet, from which we can derive correspondence between images and
+                                floor plans. C3 contains 91K paired floor plans and photos across 574 scenes with 155M
+                                pixel-level correspondences and 86K camera poses. We find that state-of-the-art
+                                correspondence models struggle on this task. By training on our new data, we can improve
+                                on the best performing method by 34% in RMSE. However, we also identify open challenges
+                                in cross-modal geometric reasoning that our dataset aims to help address.
                             </p>
                         </div>
                     </div>
@@ -223,8 +225,8 @@
                         </div>
                         <div class="has-text-justified">
                             <p>
-                                Our goal is to create a dataset that consists of paired floor plans and photos and annotated
-                                correspondences between them. We achieve this through the following steps:
+                                Our goal is to create a dataset that consists of paired floor plans and photos and
+                                annotated correspondences between them. We achieve this through the following steps:
                             </p>
 
                             <ol style="padding-left: 3em">
@@ -234,13 +236,13 @@
                                 <ol type="a" style="padding-left: 2em">
                                     <li>
                                         Running COLMAP on the photo collection of each scene which estimates a 3D camera
-                                        pose for each image and a sparse point cloud corresponding to keypoints in the photo
-                                        collection.
+                                        pose for each image and a sparse point cloud corresponding to keypoints in the
+                                        photo collection.
                                     </li>
                                     <li>
                                         Manually aligning reconstructed point clouds with floor plan (with a custom user
-                                        interface) thus directly yielding correspondences between individual photos and the
-                                        floor plan.
+                                        interface) thus directly yielding correspondences between individual photos and
+                                        the floor plan.
                                     </li>
                                 </ol>
                             </ol>
@@ -254,68 +256,68 @@
         <section class="hero is-light is-small">
             <div class="hero-body">
                 <div class="container">
-                <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_01230.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_01230.png" alt="example image" />
-                    </a>
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_01230.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_01230.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_03953.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_03953.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_04164.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_04164.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_04964.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_04964.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_06887.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_06887.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_09552.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_09552.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_10805.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_10805.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_11882.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_11882.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_12433.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_12433.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_15299.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_15299.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_16068.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_16068.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/dataset_samples/carousel_16724.png" class="glightbox">
+                                <img src="./static/images/dataset_samples/carousel_16724.png" alt="example image" />
+                            </a>
+                        </div>
                     </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_03953.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_03953.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_04164.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_04164.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_04964.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_04964.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_06887.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_06887.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_09552.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_09552.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_10805.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_10805.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_11882.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_11882.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_12433.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_12433.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_15299.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_15299.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_16068.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_16068.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/dataset_samples/carousel_16724.png" class="glightbox">
-                        <img src="./static/images/dataset_samples/carousel_16724.png" alt="example image" />
-                    </a>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -330,12 +332,13 @@
                         <div class="has-text-justified">
                             <p>
                                 We evaluate our dataset with a combination of sparse, semi-dense and dense matching
-                                algorithms: SuperGlue, LoFTR, DINOv2, DIFT, RoMa, and MASt3R. We also evaluate on DUSt3R.
-                                While the correspondence baseline results were rather poor,
+                                algorithms: SuperGlue, LoFTR, DINOv2, DIFT, RoMa, and MASt3R. We also evaluate on
+                                DUSt3R. While the correspondence baseline results were rather poor,
                                 <span class="black-text">
                                     <b>
-                                        we observe promising geometric structures in DUSt3R outputs; the model only needed
-                                        to learn the 2D translations, rotation and scale to align to the floor plan.
+                                        we observe promising geometric structures in DUSt3R outputs; the model only
+                                        needed to learn the 2D translations, rotation and scale to align to the floor
+                                        plan.
                                     </b> </span
                                 >We therefore leverage the strong geometric prior from the pretrained DUSt3R model and
                                 finetune on our dataset.
@@ -383,12 +386,12 @@
                         <div class="has-text-justified">
                             <p>
                                 We find that correct correspondence predictions by C3Po is generally accompanied by high
-                                confidence scores, while incorrect predictions have low confidence scores. The photos from
-                                lower confidence results usually exhibit ambiguity, like the cases identified in Open
-                                Challenges, while it is more obvious to identify the camera pose of photos from the higher
-                                confidence results. This is further corroborated by the PR curves, which show that C3Po
-                                significantly outperforms state-of-the-art models because more confident correspondence
-                                predictions are more likely to be correct.
+                                confidence scores, while incorrect predictions have low confidence scores. The photos
+                                from lower confidence results usually exhibit ambiguity, like the cases identified in
+                                Open Challenges, while it is more obvious to identify the camera pose of photos from the
+                                higher confidence results. This is further corroborated by the PR curves, which show
+                                that C3Po significantly outperforms state-of-the-art models because more confident
+                                correspondence predictions are more likely to be correct.
                             </p>
                         </div>
                     </div>
@@ -400,46 +403,46 @@
         <section class="hero is-small">
             <div class="hero-body">
                 <div class="container">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-5">High Confidence</h2>
-                </div>
-                <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item">
-                    <a href="./static/images/high_conf/00997.png" class="glightbox">
-                        <img src="./static/images/high_conf/00997.png" alt="example image" />
-                    </a>
+                    <div class="columns is-centered has-text-centered">
+                        <h2 class="title is-5">High Confidence</h2>
                     </div>
-                    <div class="item">
-                    <a href="./static/images/high_conf/03302.png" class="glightbox">
-                        <img src="./static/images/high_conf/03302.png" alt="example image" />
-                    </a>
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <a href="./static/images/high_conf/00997.png" class="glightbox">
+                                <img src="./static/images/high_conf/00997.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/high_conf/03302.png" class="glightbox">
+                                <img src="./static/images/high_conf/03302.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/high_conf/04352.png" class="glightbox">
+                                <img src="./static/images/high_conf/04352.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/high_conf/04777.png" class="glightbox">
+                                <img src="./static/images/high_conf/04777.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/high_conf/07031.png" class="glightbox">
+                                <img src="./static/images/high_conf/07031.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/high_conf/16492.png" class="glightbox">
+                                <img src="./static/images/high_conf/16492.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/high_conf/19583.png" class="glightbox">
+                                <img src="./static/images/high_conf/19583.png" alt="example image" />
+                            </a>
+                        </div>
                     </div>
-                    <div class="item">
-                    <a href="./static/images/high_conf/04352.png" class="glightbox">
-                        <img src="./static/images/high_conf/04352.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/high_conf/04777.png" class="glightbox">
-                        <img src="./static/images/high_conf/04777.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/high_conf/07031.png" class="glightbox">
-                        <img src="./static/images/high_conf/07031.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/high_conf/16492.png" class="glightbox">
-                        <img src="./static/images/high_conf/16492.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/high_conf/19583.png" class="glightbox">
-                        <img src="./static/images/high_conf/19583.png" alt="example image" />
-                    </a>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -447,51 +450,51 @@
         <section class="hero is-small">
             <div class="hero-body">
                 <div class="container">
-                <div class="columns is-centered has-text-centered">
-                    <h2 class="title is-5">Low Confidence</h2>
-                </div>
-                <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item">
-                    <a href="./static/images/low_conf/02588.png" class="glightbox">
-                        <img src="./static/images/low_conf/02588.png" alt="example image" />
-                    </a>
+                    <div class="columns is-centered has-text-centered">
+                        <h2 class="title is-5">Low Confidence</h2>
                     </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/05004.png" class="glightbox">
-                        <img src="./static/images/low_conf/05004.png" alt="example image" />
-                    </a>
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <a href="./static/images/low_conf/02588.png" class="glightbox">
+                                <img src="./static/images/low_conf/02588.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/05004.png" class="glightbox">
+                                <img src="./static/images/low_conf/05004.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/06595.png" class="glightbox">
+                                <img src="./static/images/low_conf/06595.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/08340.png" class="glightbox">
+                                <img src="./static/images/low_conf/08340.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/09776.png" class="glightbox">
+                                <img src="./static/images/low_conf/09776.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/16556.png" class="glightbox">
+                                <img src="./static/images/low_conf/16556.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/18011.png" class="glightbox">
+                                <img src="./static/images/low_conf/18011.png" alt="example image" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="./static/images/low_conf/19161.png" class="glightbox">
+                                <img src="./static/images/low_conf/19161.png" alt="example image" />
+                            </a>
+                        </div>
                     </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/06595.png" class="glightbox">
-                        <img src="./static/images/low_conf/06595.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/08340.png" class="glightbox">
-                        <img src="./static/images/low_conf/08340.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/09776.png" class="glightbox">
-                        <img src="./static/images/low_conf/09776.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/16556.png" class="glightbox">
-                        <img src="./static/images/low_conf/16556.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/18011.png" class="glightbox">
-                        <img src="./static/images/low_conf/18011.png" alt="example image" />
-                    </a>
-                    </div>
-                    <div class="item">
-                    <a href="./static/images/low_conf/19161.png" class="glightbox">
-                        <img src="./static/images/low_conf/19161.png" alt="example image" />
-                    </a>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -506,7 +509,12 @@
                         </div>
                         <div class="has-text-justified">
                             <p>
-                                We share two categories of data that our model struggles on. Challenge 1, top two rows, are cases where the photo provides minimal context clues of where it could be on the floor plan. Challenge 2, bottom two rows, are scenes that exhibit structural symmetry, where multiple correspondence alignments would seem plausible. In all cases, our model makes plausible predictions but the answers are wrong due to lack of context or structural ambiguity.
+                                We share two categories of data that our model struggles on. Challenge 1, top two rows,
+                                are cases where the photo provides minimal context clues of where it could be on the
+                                floor plan. Challenge 2, bottom two rows, are scenes that exhibit structural symmetry,
+                                where multiple correspondence alignments would seem plausible. In all cases, our model
+                                makes plausible predictions but the answers are wrong due to lack of context or
+                                structural ambiguity.
                             </p>
                         </div>
                         <img src="./static/images/open_challenges.png" style="margin-top: 20px" />
@@ -575,7 +583,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 bulmaCarousel.attach("#results-carousel", {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     loop: false,
                     autoplay: false,
