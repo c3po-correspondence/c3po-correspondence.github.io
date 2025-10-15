@@ -116,11 +116,24 @@ body {
 .publication-body img {
 }
 
-.results-carousel {
+.results-carousel-dataset {
 	overflow: hidden;
 }
 
-.results-carousel .item {
+.results-carousel-dataset .item {
+	margin: 5px;
+	overflow: hidden;
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	padding: 0;
+	font-size: 0;
+}
+
+.results-carousel-conf {
+	overflow: hidden;
+}
+
+.results-carousel-conf .item {
 	margin: 5px;
 	overflow: hidden;
 	border: 1px solid #bbb;

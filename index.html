@@ -88,19 +88,7 @@
                                     <!-- <sup>1</sup> -->
                                     Cornell University</span
                                 >
-                                <!-- <span class="author-block"
-									><sup>2</sup>Stanford University,</span
-								>
-								<span class="author-block"
-									><sup>3</sup>Adobe Research</span
-								> -->
                             </div>
-
-                            <!-- <div class="is-size-6">
-								<span class="author-block"
-									><sup>꘎</sup>Equal Contribution</span
-								>
-							</div> -->
 
                             <div class="column has-text-centered">
                                 <div class="publication-links">
@@ -256,7 +244,7 @@
         <section class="hero is-light is-small">
             <div class="hero-body">
                 <div class="container">
-                    <div id="results-carousel" class="carousel results-carousel">
+                    <div id="results-carousel-dataset" class="carousel results-carousel-dataset">
                         <div class="item">
                             <a href="./static/images/dataset_samples/carousel_01230.png" class="glightbox">
                                 <img src="./static/images/dataset_samples/carousel_01230.png" alt="example image" />
@@ -368,8 +356,6 @@
                         </p>
                         <img src="./static/images/qualitative.png" style="margin-top: 20px" />
                         <img src="./static/images/quantitative.png" style="margin-top: 20px" />
-                        <!-- <embed src="./static/images/nvs/qualitative.pdf" type="application/pdf" width="600" height="500">
-                        <embed src="./static/images/nvs/quantitative.pdf" type="application/pdf" width="600" height="500"> -->
                     </div>
                 </div>
             </div>
@@ -406,7 +392,7 @@
                     <div class="columns is-centered has-text-centered">
                         <h2 class="title is-5">High Confidence</h2>
                     </div>
-                    <div id="results-carousel" class="carousel results-carousel">
+                    <div id="results-carousel-conf" class="carousel results-carousel-conf">
                         <div class="item">
                             <a href="./static/images/high_conf/00997.png" class="glightbox">
                                 <img src="./static/images/high_conf/00997.png" alt="example image" />
@@ -453,7 +439,7 @@
                     <div class="columns is-centered has-text-centered">
                         <h2 class="title is-5">Low Confidence</h2>
                     </div>
-                    <div id="results-carousel" class="carousel results-carousel">
+                    <div id="results-carousel-conf" class="carousel results-carousel-conf">
                         <div class="item">
                             <a href="./static/images/low_conf/02588.png" class="glightbox">
                                 <img src="./static/images/low_conf/02588.png" alt="example image" />
@@ -582,8 +568,21 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                bulmaCarousel.attach("#results-carousel", {
+                bulmaCarousel.attach("#results-carousel-dataset", {
                     slidesToShow: 2,
+                    slidesToScroll: 1,
+                    loop: false,
+                    autoplay: false,
+                    navigation: true,
+                    pagination: true,
+                });
+                const lightbox = GLightbox({
+                    selector: ".glightbox",
+                });
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                bulmaCarousel.attach("#results-carousel-conf", {
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     loop: false,
                     autoplay: false,
