@@ -311,17 +311,9 @@
                         </div>
                         <div class="has-text-justified">
                             <p>
-                                We evaluate our dataset with a combination of sparse, semi-dense and dense matching
-                                algorithms: SuperGlue, LoFTR, DINOv2, DIFT, RoMa, and MASt3R. We also evaluate on
-                                DUSt3R. While the correspondence baseline results were rather poor,
-                                <span class="black-text">
-                                    <b>
-                                        we observe promising geometric structures in DUSt3R outputs; the model only
-                                        needed to learn the 2D translations, rotation and scale to align to the floor
-                                        plan.
-                                    </b> </span
-                                >We therefore leverage the strong geometric prior from the pretrained DUSt3R model and
-                                finetune on our dataset.
+                                We evaluate a combination of sparse, semi-dense, and dense matching
+                                algorithms on our dataset: SuperGlue, LoFTR, DINOv2, DIFT, RoMa, and MASt3R. We also evaluate on
+                                DUSt3R. We find that all methods struggle with this task.
                             </p>
                         </div>
                     </div>
@@ -332,21 +324,34 @@
         <section class="section">
             <div class="container is-max-desktop">
                 <!-- Abstract. -->
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-4">Correspondence by Pointmap Prediction</h2>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-full has-text-centered">
+                        <img src="./static/images/method.png" style="margin-bottom: 20px; max-width: 100%; height: auto;" />
+                    </div>
+                </div>
                 <div class="columns is-centered">
                     <div class="column is-four-fifths">
-                        <div class="columns is-centered has-text-centered">
-                            <h2 class="title is-4">Correspondence by Pointmap Prediction</h2>
-                        </div>
-                        <p>
-                            We use the DUSt3R framework with the floor plan as the reference image, which defines the 3D
-                            coordinate frame, along with a photo. DUSt3R then generates a pointmap that associates each
-                            pixel in the photo with a 3D point (<em>x</em>, <em>y</em>, <em>z</em>) in the coordinate
-                            system of the floor plan. To project onto the floor plan, we apply an orthographic
-                            projection by dropping the y-coordinate -- i.e. (<em>x</em>, <em>y</em>, <em>z</em>) &#8594;
-                            (<em>x</em>, <em>z</em>) -- since the y-axis represents the vertical (up) direction in the
-                            floor plan's coordinate frame.
+                        <div class="has-text-justified">
+                            <p>
+                            To improve performance, we pose correspondence as a pointmap prediction task and fine-tune
+                            DUSt3R for this purpose. Specifically, we set the floor plan as the reference image, which 
+                            means that each image pixel can be mapped to a 3D point (<em>x</em>, <em>y</em>, <em>z</em>) 
+                            in the floor plan coordinate frame. To obtain a correspondence, we query a photo pixel to 
+                            retrieve its 3D point and project it onto the floor plan by dropping the y-coordinate &mdash; 
+                            i.e. (<em>x</em>, <em>y</em>, <em>z</em>) &#8594; (<em>x</em>, <em>z</em>) &mdash; since the 
+                            y-axis represents the vertical (up) direction in the floor plan's coordinate frame. We also 
+                            experimented with discarding the z-coordinate, but this emperically led to slower model 
+                            convergence. During training, we observe overfitting on the floor plans so we applied 
+                            photometric augmentations (like color jittering) and geometric augmentations (like random 
+                            cropping and rotation) to the floor plans to improve generalization.
                         </p>
-                        <img src="./static/images/qualitative.png" style="margin-top: 20px" />
+                        </div>
+                        <img src="./static/images/qualitative.png" style="margin-top: 60px" />
                         <img src="./static/images/quantitative.png" style="margin-top: 20px" />
                     </div>
                 </div>
