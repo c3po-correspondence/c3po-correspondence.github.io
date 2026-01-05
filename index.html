@@ -175,7 +175,6 @@
 
         <section class="section hero is-light">
             <div class="container is-max-desktop">
-                <!-- Abstract. -->
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <h2 class="title is-3">Abstract</h2>
@@ -206,7 +205,6 @@
 
         <section class="section">
             <div class="container is-max-desktop">
-                <!-- Abstract. -->
                 <div class="columns is-centered">
                     <div class="column is-four-fifths">
                         <div class="columns is-centered has-text-centered">
@@ -324,7 +322,6 @@
 
         <section class="section">
             <div class="container is-max-desktop">
-                <!-- Abstract. -->
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <h2 class="title is-4">Correspondence by Pointmap Prediction</h2>
@@ -361,7 +358,6 @@
 
         <section class="section">
             <div class="container is-max-desktop">
-                <!-- Abstract. -->
                 <div class="columns is-centered">
                     <div class="column is-four-fifths">
                         <div class="columns is-centered has-text-centered">
@@ -478,9 +474,26 @@
             </div>
         </section>
 
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <div class="columns is-centered has-text-centered">
+                            <h2 class="title is-3">Camera Pose Estimation</h2>
+                        </div>
+                        <div class="has-text-justified">
+                            <p>
+                                We explore the task of estimating 2D camera pose of the ground-view photo in the floor plan coordinate frame &mdash; a challenging "you are here" photo location identification problem. We first estimate epipolar geometry via correspondences found with our method and simulate the floor plan's orthographic projection with a large focal length (10<sup>7</sup> pixels). From the matched points between the photo and plan, we compute and decompose an essential matrix to recover the camera's rotation and translation. We then align the result with the floor plan's coordinate frame. Some scenes with near-planar structures (as vertical planes like walls yield points that lie on a line in the floor plan) can produce ambiguous poses, so we detect and correct them by reflecting the camera across the best-fit plane of correspondences. Finally, we compute the camera location from the epipole in the floor plan image, which corresponds to the photo's position.
+                            </p>
+                        </div>
+                        <img src="./static/images/camera_pose_estimation.png" style="margin-top: 20px" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container is-max-desktop">
-                <!-- Abstract. -->
                 <div class="columns is-centered">
                     <div class="column is-four-fifths">
                         <div class="columns is-centered has-text-centered">
